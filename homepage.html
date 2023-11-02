@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit= no">
+    <title>Search on the Wrb</title>
+    <style>
+        body,html {
+            margin: 0;
+            height: 100%;
+            background-image: url('bgt.gif');
+            background-position: center;
+            background-size: 100% 100%;
+
+        }
+        header {
+            height: 50px;
+            width: 100%;
+
+        }
+        .d {
+            float: right;
+            padding-top: 10px;
+            padding-right: 10px;
+        }
+        .prof {
+            max-width: 40px;
+            max-height: 40px;
+        }
+        .google {
+            height: 70px;
+            width: 70px;
+            left: 50%;
+        }
+        searchWindow {
+            height: 200px;
+            width: 100%;
+        }
+        .box {
+            width: 95%;
+            height: 50px;
+            background-color: transparent;
+            margin-top: 15px;
+            display: flex;
+            padding-left: 10px;
+            align-items: center;
+            border: 2px solid white;
+            border-radius: 30px;
+        }
+        gLogo {
+            padding-top: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        gBox {
+            margin-top: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .searchinput {
+            background-color: transparent;
+            border: 0px solid black;
+            outline: none;
+            color: white;
+            width: 90%;
+            font-size: 16px;
+        }
+        .tbbck {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tableBox {
+
+            width: 90%;
+            height: 200px;
+            margin-top: 20px;
+
+        }
+        .rows {
+            height: 50%;
+            width: 100%;
+
+        }
+        .columns {
+            height: 100%;
+            width: 33.3%;
+            float: left;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .colImg {
+            height: 60px;
+            width: 60px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="home">
+        <header>
+            <div class="d">
+                <img class="prof" src="myPic.png">
+            </div>
+        </header>
+        <searchWindow>
+            <gLogo>
+                <img class="google" src="google.png"><br>
+            </gLogo>
+            <gBox>
+                <div class="box">
+                    <input id="inputtxt"class="searchinput" type="text" placeholder="Search on google">
+                    <img id="searchbtn"style="height: 20px;" src="srch.png" onclick="search()">
+                </div>
+            </gBox>
+            <div class="tbbck">
+                <div class="tableBox">
+                    <div class="rows">
+                        <div class="columns">
+                           <a href="https://facebook.com/">
+                                <img class="colImg" src="fb.png">
+                           </a>
+                        </div>
+                        <div class="columns">
+                           <a href="https://instagram.com/">
+                                <img class="colImg" src="ig.png">
+                           </a>
+                        </div>
+                        <div class="columns">
+                           <a href="https://m.youtube.com/">
+                                <img class="colImg" src="yt.png">
+                           </a>
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <div class="columns">
+                           <a href="https://gmail.com/">
+                                <img class="colImg" src="gm.png">
+                           </a>
+                        </div>
+                        <div class="columns">
+                           <a href="https://github.com/">
+                                <img class="colImg" src="gh.png">
+                           </a>
+                        </div>
+                        <div class="columns">
+                           <a href="https://stackoverflow.com/">
+                                <img class="colImg" src="so.png">
+                           </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </searchWindow>
+    </div>
+
+
+
+    <script>
+        function search() {
+            var text = input.value
+            var ghead = "https://www.google.com/search?q="
+            var link = ghead+text
+            window.open(link)
+        }
+        var input = document.getElementById("inputtxt");
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                search()
+            }
+        });
+    </script>
+</body>
+</html>
